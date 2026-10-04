@@ -18,9 +18,9 @@ def fetch_swapi_data():
             box=box.SQUARE,
             border_style="grey70",
         )
-        table.add_column("NAME", style="magenta")
+        table.add_column("NAME", style="red")
         table.add_column("DIAMETER", style="blue")
-        table.add_column("POPULATION", style="cyan")
+        table.add_column("POPULATION", style="green")
 
         for planet in data:
             table.add_row(
