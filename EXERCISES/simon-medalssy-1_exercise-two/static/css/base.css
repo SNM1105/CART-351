@@ -1,0 +1,103 @@
+*{
+    margin:0;
+     padding:0;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+   
+}
+h2{
+
+    font-size:32px;
+    padding:5px;
+    background-color:rgb(14, 181, 232);
+    color: rgb(255,255,255);
+}
+nav{
+    padding-bottom:5px;
+    background-color:rgb(14, 181, 232);
+}
+nav ul{
+    display:flex;
+    justify-content:right;
+  
+}
+nav ul li{
+    width:10%;
+    text-transform: uppercase;
+    text-decoration: none;
+    list-style-type: none;
+
+      
+}
+nav li a{
+text-decoration: none;
+color:rgb(255, 255, 255);
+}
+
+main{
+    margin: 10px;
+     background-color: rgb(229, 236, 245);
+     min-height:calc(82vh);
+}
+
+footer{
+     background-color:rgb(14, 181, 232);
+       min-height:5vh;
+       padding:5px;
+       color: rgb(255,255,255);
+
+}
+
+/* NASA Search Pages */
+.nasa-result,
+.nasa-gallery {
+    margin-top: 30px;
+}
+
+.nasa-result img {
+    max-width: 100%;
+    border-radius: 12px;
+}
+
+.nasa-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.nasa-gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.2s;
+}
+
+.nasa-gallery img:hover {
+    transform: scale(1.05);
+}
+
+form {
+    margin: 25px 0;
+}
+
+form input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+}
+
+form button {
+    padding: 12px 20px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #1d4ed8;
+}

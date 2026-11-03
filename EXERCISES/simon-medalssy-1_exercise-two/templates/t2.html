@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>NASA Image Gallery</h1>
+<p>Explore multiple images from NASA's collection.</p>
+
+<form action="{{ url_for('getSearchCriteria_adv') }}" method="GET">
+    <input type="text" name="keyword" placeholder="Search NASA images..." required>
+    <button type="submit">Search NASA</button>
+</form>
+
+<div class="nasa-gallery">
+    {% for image in images %}
+    <img src="{{ image }}" alt="NASA Image" width="300">
+    {% endfor %}
+</div>
+
+{% endblock %}

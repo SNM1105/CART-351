@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>NASA Image Explorer</h1>
+<p>Search NASA's collection of space photography!</p>
+
+<form action="{{ url_for('getSearchCriteria') }}" method="GET">
+    <input type="text" name="keyword" placeholder="Search for Mars, Jupiter, Earth..." required>
+    <button type="submit">Search NASA</button>
+</form>
+
+{% if have_results %}
+
+<div class="nasa-result">
+    <img src="{{ imgPath }}" alt="NASA Image" width="500">
+    <p>{{ description }}</p>
+</div>
+
+{% endif %}
+
+{% endblock %}
