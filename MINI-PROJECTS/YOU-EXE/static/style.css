@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080b10;
+    color: #e5e7eb;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    text-align: center;
+    padding: 30px;
+}
+
+h1 {
+    font-size: 5rem;
+    letter-spacing: 8px;
+    color: #00ffcc;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #9ca3af;
+    margin-bottom: 40px;
+}
+
+button {
+    background: transparent;
+    border: 1px solid #00ffcc;
+    color: #00ffcc;
+    padding: 15px 35px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #00ffcc;
+    color: #080b10;
+}
+
+/* Hide inactive screens */
+.hidden {
+    display: none;
+}
+
+/* Questionnaire */
+#questionScreen {
+    width: 100%;
+    max-width: 650px;
+}
+
+#progress {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: #00ffcc;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 40px;
+}
+
+#answers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.answerBtn {
+    width: 100%;
+    min-height: 90px;
+    padding: 20px;
+    font-size: 0.9rem;
+    letter-spacing: 0;
+    text-align: center;
+    border: 1px solid #303840;
+    color: #e5e7eb;
+    background: #101820;
+}
+
+.answerBtn:hover {
+    border-color: #00ffcc;
+    background: #132c2a;
+    color: #00ffcc;
+}
+
+/* Completion screen */
+#completeScreen h1 {
+    font-size: 3rem;
+}
+
+@media (max-width: 500px) {
+    #answers {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Personality report */
+#completeScreen {
+    width: 100%;
+    max-width: 650px;
+    text-align: left;
+}
+
+.systemLabel {
+    color: #00ffcc;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+#personalityName {
+    color: #00ffcc;
+    font-size: 3rem;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+#personalityDescription {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #c5cbd3;
+    margin-bottom: 40px;
+}
+
+.confidenceSection {
+    margin-bottom: 40px;
+}
+
+#confidenceValue {
+    color: #00ffcc;
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.confidenceBar {
+    width: 100%;
+    height: 8px;
+    background: #263d3b;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#confidenceFill {
+    height: 100%;
+    width: 0%;
+    background: #00ffcc;
+    transition: width 1.5s ease;
+}
+
+#saveStatus {
+    font-size: 0.85rem;
+    color: #8a9b9b;
+    margin-bottom: 25px;
+}
+
+#completeScreen button {
+    margin-top: 10px;
+}
+
+/* Collective dashboard */
+#collectiveScreen {
+    width: 100%;
+    max-width: 700px;
+    text-align: left;
+}
+
+#collectiveScreen h2 {
+    font-size: 2.5rem;
+    color: #e5e7eb;
+    margin-bottom: 20px;
+}
+
+#populationChart {
+    margin-top: 40px;
+    margin-bottom: 35px;
+}
+
+.populationItem {
+    margin-bottom: 25px;
+}
+
+.populationLabel {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+    color: #c5cbd3;
+    letter-spacing: 1px;
+}
+
+.populationBar {
+    width: 100%;
+    height: 10px;
+    background: #263d3b;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.populationFill {
+    height: 100%;
+    background: #00ffcc;
+    transition: width 1s ease;
+}
+
+#totalUsers {
+    color: #00ffcc;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+#viewCollective {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#backToResults {
+    margin-top: 10px;
+}
+
+/* =====================================
+   ALGORITHM DECONSTRUCTION
+===================================== */
+
+#deconstructionScreen {
+    width: 100%;
+    max-width: 750px;
+    text-align: left;
+    padding: 40px 25px;
+}
+
+#deconstructionScreen h2 {
+    font-size: 2.5rem;
+    color: #00ffcc;
+    margin-bottom: 20px;
+}
+
+.revealText {
+    font-size: 1.2rem;
+    color: #e5e7eb;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.revealBox {
+    background: #101820;
+    border-left: 3px solid #00ffcc;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.revealBox h3 {
+    color: #00ffcc;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.revealBox p {
+    color: #c5cbd3;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.algorithmControls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 35px;
+    margin-bottom: 25px;
+}
+
+.algorithmControls button {
+    padding: 12px 20px;
+    font-size: 0.75rem;
+}
+
+#algorithmExplanation {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+#deconstructionChart {
+    margin-bottom: 30px;
+}
+
+#deconstructionTotal {
+    color: #00ffcc;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}

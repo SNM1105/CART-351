@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOU.EXE</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <body>
+        <!-- Welcome Screen -->
+        <main id="welcomeScreen">
+            <h1>YOU.EXE</h1>
+            <p>We understand you better than you understand yourself.</p>
+            <button id="startBtn">BEGIN ANALYSIS</button>
+        </main>
+    
+        <!-- Questionnaire Screen -->
+        <main id="questionScreen" class="hidden">
+            <p id="progress">QUESTION 1 / 5</p>
+            <h2 id="questionText"></h2>
+            <div id="answers"></div>
+        </main>
+    
+        <!-- Completion Screen -->
+        <main id="completeScreen" class="hidden">
+            <p class="systemLabel">YOU.EXE / PERSONALITY REPORT</p>
+        
+            <h3 id="personalityName"></h3>
+        
+            <p id="personalityDescription"></p>
+        
+            <div class="confidenceSection">
+                <p class="systemLabel">ALGORITHMIC CONFIDENCE</p>
+        
+                <h2 id="confidenceValue"></h2>
+        
+                <div class="confidenceBar">
+                    <div id="confidenceFill"></div>
+                </div>
+            </div>
+        
+            <p id="saveStatus">Saving your responses...</p>
+
+            <button id="viewCollective">VIEW COLLECTIVE ANALYSIS</button>
+
+            <button id="viewDeconstruction">DECONSTRUCT THE ALGORITHM</button>
+
+            <button id="restartBtn">START AGAIN</button>
+        </main>
+
+        <!-- Collective Dashboard -->
+        <main id="collectiveScreen" class="hidden">
+        
+            <p class="systemLabel">
+                YOU.EXE / COLLECTIVE INTELLIGENCE
+            </p>
+        
+            <h2>Population Analysis</h2>
+        
+            <p>
+                Your identity is not unique.
+                You are part of a larger pattern.
+            </p>
+        
+            <div id="populationChart"></div>
+        
+            <p id="totalUsers"></p>
+        
+            <button id="backToResults">
+                BACK TO MY RESULTS
+            </button>
+
+        </main>
+
+        <!-- Algorithm Deconstruction Screen -->
+        <main id="deconstructionScreen" class="hidden">
+        
+            <p class="systemLabel">
+                YOU.EXE / SYSTEM DECONSTRUCTION
+            </p>
+        
+            <h2>THE ALGORITHM IS LYING.</h2>
+        
+            <p class="revealText">
+                Your personality was not discovered.
+                It was assigned.
+            </p>
+        
+            <div class="revealBox">
+                <h3>01 / THE CLASSIFICATION</h3>
+                <p>
+                    Every answer was assigned to a personality
+                    category using rules invented by the creator.
+                    There is no psychological research supporting
+                    these classifications.
+                </p>
+            </div>
+        
+            <div class="revealBox">
+                <h3>02 / THE CONFIDENCE</h3>
+                <p>
+                    Your confidence percentage was randomly
+                    generated between 85% and 99%.
+                    It does not measure accuracy or certainty.
+                </p>
+            </div>
+        
+            <div class="revealBox">
+                <h3>03 / THE EXPERIMENT</h3>
+                <p>
+                    Change the algorithm below.
+                    Watch how the same data produces
+                    completely different conclusions.
+                </p>
+            </div>
+        
+            <div class="algorithmControls">
+                <button id="originalAlgorithm">
+                    ORIGINAL
+                </button>
+        
+                <button id="reverseAlgorithm">
+                    REVERSE
+                </button>
+        
+                <button id="shiftAlgorithm">
+                    SHIFT
+                </button>
+            </div>
+        
+            <p id="algorithmExplanation"></p>
+        
+            <div id="deconstructionChart"></div>
+        
+            <p id="deconstructionTotal"></p>
+        
+            <button id="backFromDeconstruction">
+                BACK TO RESULTS
+            </button>
+        
+        </main>
+
+
+    
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </body>
+</body>
+
+</html>
