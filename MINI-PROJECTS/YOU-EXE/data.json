@@ -473,5 +473,30 @@
                 "answer": "An empty notebook"
             }
         ]
+    },
+    {
+        "timestamp": "2026-11-09T19:45:44.382189+00:00",
+        "answers": [
+            {
+                "question": "Which environment makes you feel most comfortable?",
+                "answer": "A familiar room"
+            },
+            {
+                "question": "When do you feel most productive?",
+                "answer": "Early morning"
+            },
+            {
+                "question": "Which color are you most drawn to?",
+                "answer": "Green"
+            },
+            {
+                "question": "How do you approach difficult decisions?",
+                "answer": "Analyze every possibility"
+            },
+            {
+                "question": "Which object would you choose to keep?",
+                "answer": "A mysterious key"
+            }
+        ]
     }
 ]

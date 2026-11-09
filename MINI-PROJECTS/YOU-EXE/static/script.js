@@ -47,7 +47,6 @@ const questions = [
     }
 ];
 
-
 const personalityTypes = {
     observer: {
         name: "THE OBSERVER",
@@ -67,8 +66,7 @@ const personalityTypes = {
     }
 };
 
-// Arbitrary classifications.
-// These are NOT scientifically supported.
+// Random Classes
 const answerScores = [
     {
         "A quiet forest": "observer",
@@ -118,12 +116,12 @@ function generatePersonality(answers) {
         }
     });
 
-    // Find the personality with the highest score
+    // Find personality with the highest score
     const winner = Object.keys(scores).reduce((a, b) =>
         scores[a] >= scores[b] ? a : b
     );
 
-    // Invent a confidence percentage
+    // Invent a random confidence percentage
     const confidence = (
         85 + Math.random() * 14
     ).toFixed(1);
@@ -135,7 +133,6 @@ function generatePersonality(answers) {
         confidence: confidence
     };
 }
-
 
 let currentQuestion = 0;
 let userAnswers = [];
@@ -162,7 +159,6 @@ startBtn.addEventListener("click", () => {
     showQuestion();
 });
 
-// Display the current question
 function showQuestion() {
     const current = questions[currentQuestion];
 
@@ -187,7 +183,6 @@ function showQuestion() {
     });
 }
 
-// Save selected answer and advance
 function selectAnswer(answer) {
     userAnswers.push({
         question: questions[currentQuestion].question,
@@ -204,8 +199,6 @@ function selectAnswer(answer) {
 }
 
 // Finish the questionnaire
-
-
 async function finishQuestionnaire() {
     questionScreen.classList.add("hidden");
     completeScreen.classList.remove("hidden");
@@ -279,7 +272,6 @@ restartBtn.addEventListener("click", () => {
     userAnswers = [];
 });
 
-
 // Collective dashboard elements
 const collectiveScreen =
     document.getElementById("collectiveScreen");
@@ -296,7 +288,6 @@ const populationChart =
 const totalUsers =
     document.getElementById("totalUsers");
 
-
 // Open the collective dashboard
 viewCollectiveBtn.addEventListener("click", async () => {
     completeScreen.classList.add("hidden");
@@ -305,13 +296,11 @@ viewCollectiveBtn.addEventListener("click", async () => {
     await loadCollectiveData();
 });
 
-
 // Return to individual results
 backToResultsBtn.addEventListener("click", () => {
     collectiveScreen.classList.add("hidden");
     completeScreen.classList.remove("hidden");
 });
-
 
 // Retrieve saved data from Flask
 async function loadCollectiveData() {
@@ -354,7 +343,6 @@ async function loadCollectiveData() {
             "Failed to retrieve population data.";
     }
 }
-
 
 // Generate the visualization
 function displayPopulation(counts, total) {
@@ -401,11 +389,7 @@ function displayPopulation(counts, total) {
         `TOTAL SUBJECTS ANALYZED: ${total}`;
 }
 
-
-// ======================================
-// ALGORITHM DECONSTRUCTION
-// ======================================
-
+// Algorithm deconstruction
 const deconstructionScreen =
     document.getElementById("deconstructionScreen");
 
@@ -426,8 +410,6 @@ const algorithmExplanation =
 
 let savedSubmissions = [];
 
-
-// Open the deconstruction screen
 viewDeconstructionBtn.addEventListener("click", async () => {
     completeScreen.classList.add("hidden");
     deconstructionScreen.classList.remove("hidden");
@@ -435,15 +417,12 @@ viewDeconstructionBtn.addEventListener("click", async () => {
     await loadDeconstructionData();
 });
 
-
 // Return to results
 backFromDeconstructionBtn.addEventListener("click", () => {
     deconstructionScreen.classList.add("hidden");
     completeScreen.classList.remove("hidden");
 });
 
-
-// Retrieve the original saved data
 async function loadDeconstructionData() {
     deconstructionChart.textContent = "Loading data...";
 
@@ -465,8 +444,6 @@ async function loadDeconstructionData() {
     }
 }
 
-
-// Apply a different interpretation
 function applyAlgorithm(mode) {
     const counts = {
         observer: 0,
@@ -529,8 +506,6 @@ function applyAlgorithm(mode) {
     algorithmExplanation.textContent = explanations[mode];
 }
 
-
-// Display recalculated population data
 function displayDeconstruction(counts, total) {
     deconstructionChart.innerHTML = "";
 
@@ -573,8 +548,6 @@ function displayDeconstruction(counts, total) {
         `UNCHANGED DATASET: ${total} SUBMISSIONS`;
 }
 
-
-// Algorithm control buttons
 document.getElementById("originalAlgorithm")
     .addEventListener("click", () => {
         applyAlgorithm("original");
